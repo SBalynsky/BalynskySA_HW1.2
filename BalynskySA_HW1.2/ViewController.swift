@@ -9,6 +9,8 @@
 import UIKit
 
 var counter = 0
+let lightON: CGFloat = 1
+let lightOff: CGFloat = 0.3
 
 class ViewController: UIViewController {
 
@@ -24,13 +26,13 @@ class ViewController: UIViewController {
         downButton.setTitle("START", for: .normal)
         
         redView.layer.cornerRadius = 50
-        redView.alpha = 0.3
+        redView.alpha = lightOff
         
         yollowView.layer.cornerRadius = 50
-        yollowView.alpha = 0.3
+        yollowView.alpha = lightOff
         
         greenView.layer.cornerRadius = 50
-        greenView.alpha = 0.3
+        greenView.alpha = lightOff
         
     }
 
@@ -38,19 +40,19 @@ class ViewController: UIViewController {
         
         
         if  counter == 0 {
-            redView.alpha = 1
+            redView.alpha = lightON
             counter = 1
         } else if counter == 1 {
-            yollowView.alpha = 1
-            redView.alpha = 0.3
+            yollowView.alpha = lightON
+            redView.alpha = lightOff
             counter = 2
         } else if counter == 2 {
-            greenView.alpha = 1
-            yollowView.alpha = 0.3
+            greenView.alpha = lightON
+            yollowView.alpha = lightOff
             counter = 3
         } else if counter == 3 {
-            greenView.alpha = 0.3
-            redView.alpha = 1
+            greenView.alpha = lightOff
+            redView.alpha = lightON
             counter = 1
         }
          downButton.setTitle("NEXT", for: .normal)
